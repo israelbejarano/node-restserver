@@ -24,7 +24,7 @@ app.post('/usuario', function(req, res) {
                 err
             });
         }
-        usuarioBD.password = ':)'; // para evitar que se vea en la peticion, esto no afecta a la BBDD
+        // usuarioBD.password = ':)'; // para evitar que se vea en la peticion, esto no afecta a la BBDD
         res.status(200).json({
             ok: true,
             usuario: usuarioBD
