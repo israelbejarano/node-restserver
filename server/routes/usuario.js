@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 
+const bcrypt = require('bcrypt');
 const Usuario = require('../models/usuario');
 
 app.get('/usuario', function(req, res) {
@@ -12,7 +13,7 @@ app.post('/usuario', function(req, res) {
     let usuario = new Usuario({
         nombre: body.nombre,
         email: body.email,
-        password: body.password,
+        password: bcrypt.hashSync(body.password, 10),
         role: body.role
     });
 
@@ -23,6 +24,7 @@ app.post('/usuario', function(req, res) {
                 err
             });
         }
+        usuarioBD.password = ':)'; // para evitar que se vea en la peticion, esto no afecta a la BBDD
         res.status(200).json({
             ok: true,
             usuario: usuarioBD
