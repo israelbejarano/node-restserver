@@ -13,3 +13,4 @@ Para probar el código en local:
 3. Levantar la aplicación
 + ```node server/server```
 + ```nodemon server/server```
++ ```npm start```
