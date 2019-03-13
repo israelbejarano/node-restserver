@@ -17,10 +17,11 @@ app.use(bodyParser.json()); // parse application/json
 app.use(require('./routes/usuario'));
 
 // Conexion a BBDD
-mongoose.connect('mongodb://localhost:27017/cafe', (err, res) => {
-    if (err) throw err;
-    console.log('BBDD en puerto 27017:', ' online'.bgGreen);
-});
+mongoose.connect('mongodb://localhost:27017/cafe', { useNewUrlParser: true, useCreateIndex: true }, // cadena de conexion para mongo resuelve deprecateds
+    (err, res) => {
+        if (err) throw err;
+        console.log('BBDD en puerto 27017:', ' online'.bgGreen);
+    });
 
 app.listen(process.env.PORT, () => {
     console.log(`escuchando puerto ${process.env.PORT}`.bgGreen);
