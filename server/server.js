@@ -8,13 +8,8 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false })); // parse application/x-www-form-urlencoded
 app.use(bodyParser.json()); // parse application/json
 
-// importar rutas
-// var usuarioRoutes = require('./routes/usuario');
-
-// rutas
-//app.use('/usuario', usuarioRoutes);
-
-app.use(require('./routes/usuario'));
+// configuracion global de rutas
+app.use(require('./routes/index'));
 
 // Conexion a BBDD
 mongoose.connect(process.env.URLBD, { useNewUrlParser: true, useCreateIndex: true }, // cadena de conexion para mongo resuelve deprecateds
