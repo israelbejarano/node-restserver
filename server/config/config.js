@@ -15,6 +15,6 @@ let urlBD;
 if (process.env.NODE_ENV === 'dev') {
     urlBD = 'mongodb://localhost:27017/cafe';
 } else {
-    urlBD = 'mongodb+srv://admin:kRZp1SIiqVn711pH@cluster0-duhjl.mongodb.net/cafe'
+    urlBD = 'your mongodb atlas cluster url'
 }
 process.env.URLBD = urlBD;
