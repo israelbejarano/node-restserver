@@ -1,6 +1,6 @@
 ## Servidor REST Express.
 
-Servidor express.
+Servidor express. Está desplegado en Heroku [aquí] (https://stormy-beach-21493.herokuapp.com/). Sale Cannot GET / pero eso está bien ya que es una aplicación solo de backend por tanto las peticiones se hacen desde el postman. La documentación de la [API de postman está aquí] (https://documenter.getpostman.com/view/1578048/S17nVB71). Hay entorno de desarrollo y produccción con sus variables de configuración independientes. Esas variables se configuran con Heroku set haciendo así que no sean visibles en el código.
 
 ### Uso de la aplicación en local
 
