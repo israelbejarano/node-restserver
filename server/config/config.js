@@ -28,3 +28,9 @@ process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
 // seed de autenticacion
 // ========================================
 process.env.SEED = process.env.SEED || 'este-es-el-seed-desarrollo';
+
+// ========================================
+// google client, secret
+// ========================================
+process.env.CLIENT_ID = process.env.CLIENT_ID || 'your client id'; // poner un dummy para hacer push a git y poner le verdadero para push a heroku
+process.env.GOOGLE_SECRET = process.env.GOOGLE_SECRET || 'your google secret'; // poner un dummy para hacer push a git y poner le verdadero para push a heroku
