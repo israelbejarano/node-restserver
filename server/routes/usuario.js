@@ -6,6 +6,9 @@ const _ = require('underscore');
 const Usuario = require('../models/usuario');
 const { verificaToken, verificaAdminRole } = require('../middlewares/autenticacion');
 
+// ========================================
+// obtener todos usuarios
+// ========================================
 app.get('/usuario', verificaToken, (req, res) => {
     let desde = req.query.desde || 0;
     desde = Number(desde);
@@ -32,6 +35,9 @@ app.get('/usuario', verificaToken, (req, res) => {
         });
 })
 
+// ========================================
+// crear usuario
+// ========================================
 app.post('/usuario', [verificaToken, verificaAdminRole], (req, res) => {
     let body = req.body;
     let usuario = new Usuario({
@@ -56,6 +62,9 @@ app.post('/usuario', [verificaToken, verificaAdminRole], (req, res) => {
     });
 })
 
+// ========================================
+// actualizar usuario por id
+// ========================================
 app.put('/usuario/:id', [verificaToken, verificaAdminRole], (req, res) => {
     let id = req.params.id;
     let body = _.pick(req.body, ['nombre', 'email', 'img', 'role', 'estado']); // para indicar que es lo que puedo actualizar
@@ -74,6 +83,9 @@ app.put('/usuario/:id', [verificaToken, verificaAdminRole], (req, res) => {
     });
 })
 
+// ========================================
+// borrar usuario por id
+// ========================================
 app.delete('/usuario/:id', [verificaToken, verificaAdminRole], (req, res) => {
     let id = req.params.id;
 
